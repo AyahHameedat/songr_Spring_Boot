@@ -1,0 +1,10 @@
+p,h1{
+color: white;
+}
+
+body{
+background-color: Maroon; /*NAVY || Maroon*/
+text-align: center;
+max-width: 500px;
+ margin: auto;
+}

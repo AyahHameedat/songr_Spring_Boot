@@ -1,0 +1,1 @@
+window.alert(9+1);
