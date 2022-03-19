@@ -19,3 +19,8 @@
 ### (/capitalize/this is Kinda Capitalized) route to capitalize String you have capitalize.html...:->
 ### Path (localhost:8080/capitalize/this is Kinda Capitalized)
 
+<br>
+
+### (/Albums) route to show 3 albums at least as JSON data.
+### Path (localhost:8080/Albums)
+
