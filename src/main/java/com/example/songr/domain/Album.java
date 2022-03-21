@@ -1,8 +1,16 @@
 package com.example.songr.domain;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+@Entity
 public class Album {
 //    title, an artist, a songCount, a length (in seconds), and an imageUrl that is a link to that album’s art.
 
+    @Id
+    @GeneratedValue
+    private int id;
     private String title;
     private String artist;
     private int songCount;
@@ -40,6 +48,8 @@ public class Album {
         this.imageUrl = imageUrl;
     }
 
+    public int getId() { return id; }
+
     public String getTitle() {
         return title;
     }
@@ -60,16 +70,19 @@ public class Album {
         return imageUrl;
     }
 
-    @Override
-    public String toString() {
-        return "Album{" +
-                "title='" + title + '\'' +
-                ", artist='" + artist + '\'' +
-                ", songCount=" + songCount +
-                ", length=" + length +
-                ", imageUrl='" + imageUrl + '\'' +
-                '}';
-    }
+
+
+//    @Override
+//    public String toString() {
+//        return "Album{" +
+//                "title='" + title + '\'' +
+//                ", artist='" + artist + '\'' +
+//                ", songCount=" + songCount +
+//                ", length=" + length +
+//                ", imageUrl='" + imageUrl + '\'' +
+//                '}';
+//    }
+
 }
 
 
