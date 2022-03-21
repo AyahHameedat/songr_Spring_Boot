@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="UTF-8">
+  <title>Album Page</title>
+  <link rel="stylesheet" th:href="@{/CSS/style.css}">
+</head>
+<body>
+
+<h1>Hello folks</h1>
+
+<!--  Add music   -->
+<audio src="C:\Users\ayoos\ASAC\songr_Spring_Boot\src\music\Hateer-Min-Tany.mp3" controls>
+  <p>If you are reading this, it is because your browser does not support the audio element.</p>
+</audio>
+
+<!--//    title, an artist, a songCount, a length (in seconds), and an imageUrl that is a link to that album’s art.-->
+
+<form action="/addAlbums" method="post">
+  <p>Title</p>
+  <input type="text" name="title"/></br>
+  <p>Artist</p>
+  <input type="text" name="artist"/></br>
+  <p>Song Count</p>
+  <input type="text" name="songCount"/></br>
+  <p>Length</p>
+  <input type="text" name="length"/></br>
+  <p>Image Url</p>
+  <input type="text" name="imageUrl"/></br>
+
+  <br/>
+  <br/>
+
+  <button type = "submit">Submit</button>
+
+</form>
+
+<br/>
+<br/>
+<br/>
+<br/>
+
+<table>
+  <tr>
+    <th>ID</th>
+    <th>Title</th>
+    <th>Artist</th>
+    <th>Song Count</th>
+    <th>Length</th>
+    <th>Image URL</th>
+  </tr>
+  <tr th:each="album: ${AlbumsList}" class="table-row">
+    <td th:text = "${album.id}"></td>
+    <td th:text = "${album.title}"></td>
+    <td th:text = "${album.artist}"></td>
+    <td th:text = "${album.songCount}"></td>
+    <td th:text = "${album.length}"></td>
+    <td th:text = "${album.imageUrl}"></td>
+  </tr>
+</table>
+
+<br/>
+<br/>
+<br/>
+<br/>
+
+</body>
+</html>
