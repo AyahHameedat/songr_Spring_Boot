@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="UTF-8">
+  <title>Song Page</title>
+  <link rel="stylesheet" th:href="@{/CSS/style.css}">
+</head>
+<body>
+
+<h1>Hello folks</h1>
+
+<!--  Add music   -->
+<audio src="C:\Users\ayoos\ASAC\songr_Spring_Boot\src\music\Hateer-Min-Tany.mp3" controls>
+  <p>If you are reading this, it is because your browser does not support the audio element.</p>
+</audio>
+
+<!--//    title, an artist, a songCount, a length (in seconds), and an imageUrl that is a link to that album’s art.-->
+
+<form action="/addSongs" method="post">
+  <p>Title</p>
+  <input type="text" name="title"/></br>
+  <p>Length</p>
+  <input type="text" name="length"/></br>
+  <p>Track Number</p>
+  <input type="text" name="trackNumber"/></br>
+
+  <br/>
+  <br/>
+
+  <button type = "submit">Submit</button>
+
+</form>
+
+<br/>
+<br/>
+<br/>
+<br/>
+
+<table>
+  <tr>
+    <th>ID</th>
+    <th>Title</th>
+    <th>Length</th>
+    <th>Track Number</th>
+  </tr>
+  <tr th:each="song: ${songList}" class="table-row">
+    <td th:text = "${song.id}"></td>
+    <td th:text = "${song.title}"></td>
+    <td th:text = "${song.length}"></td>
+    <td th:text = "${song.trackNumber}"></td>
+  </tr>
+</table>
+
+<br/>
+<br/>
+<br/>
+<br/>
+
+</body>
+</html>
