@@ -75,6 +75,15 @@ public class helloController {
         return "Album";
     }
 
+    @ResponseBody
+    @GetMapping("/GetAllAlbums/{id}")
+    public Album getAllAlbumsByID(Model model, @PathVariable Long id)
+    {
+        Album album = AlbumsRepositories.findById(id).get();
+//        model.addAttribute("AlbumsList",AlbumsRepositories.findAll());
+        return album;
+    }
+
 
 
     @ResponseBody
@@ -89,12 +98,13 @@ public class helloController {
     @GetMapping("/GetAllSongs")
     public String getAllSongs(Model model)
     {
-        model.addAttribute("AlbumsList",songRepositories.findAll());
+        model.addAttribute("songList",songRepositories.findAll());
         return "song";
     }
 
 
-//      *************************************        Lab13               **************************************
+
+
         /**
      * Creates a new album
      *
@@ -127,6 +137,7 @@ public class helloController {
 
     }
 
+
     @ResponseBody
     @GetMapping("/Albums")
     List<Album> getAllAlbums()
@@ -135,21 +146,49 @@ public class helloController {
     }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //    @ResponseBody
 //    @GetMapping("/Albums/{id}/songs")
 //    List<song> findAllSongsOfAlbum(@PathVariable Long id) {
 //
 //        return songRepositories.findAllByAlbum_Id(id);
 //    }
-
-
-
-
-
-
-
-
-
 
 
 
